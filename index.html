@@ -50,9 +50,12 @@
             function captchaCallback(response) {
                 //console.log(response);
                 alert(response);
-                if (typeof Captcha !== "undefined") {
-                    Captcha.postMessage(response);
+                if (window.ReactNativeWebView) {
+                    window.ReactNativeWebView.postMessage(response);
                 }
+                // if (typeof Captcha !== "undefined") {
+                //     Captcha.postMessage(response);
+                // }
             }
         </script>
     </div>
