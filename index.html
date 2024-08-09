@@ -48,7 +48,7 @@
         </form>
         <script>
             function captchaCallback(response) {
-                //console.log(response);
+                console.log(response);
                 alert(response);
                 if (window.ReactNativeWebView) {
                     window.ReactNativeWebView.postMessage(response);
