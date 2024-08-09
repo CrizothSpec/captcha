@@ -2,26 +2,33 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=auto, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
+        html,
         body {
             margin: 0;
             padding: 0;
             overflow: hidden;
+            height: auto;
+            display: block;
+
+            background-color: transparent;
+
             /* Remove barras de rolagem */
         }
 
         .container {
             width: auto;
             /* Ajusta a largura do contêiner para preencher o espaço disponível */
-            height: auto;
+            max-width: 100dvw;
+            height: 100dvh;
             /* Ajusta a altura do contêiner para preencher o espaço disponível */
             display: flex;
             align-items: center;
             /* Centraliza o conteúdo verticalmente */
             justify-content: left;
-            /* Centraliza o conteúdo horizontalmente */
+            background-color: transparent;
         }
 
         .g-recaptcha {
