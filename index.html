@@ -44,15 +44,15 @@
             <div class="g-recaptcha" data-sitekey="6LdY8CAqAAAAAFw7JZSoMCA_wtZEa3kD50e2GXRC"
                 data-callback="captchaCallback"></div>
             <br />
-            <input type="submit" value="Submit">
+            <!-- <input type="submit" value="Submit"> -->
         </form>
         <script>
             function captchaCallback(response) {
                 console.log(response);
-                alert(response);
-                if (window.ReactNativeWebView) {
-                    window.ReactNativeWebView.postMessage(response);
-                }
+                // alert(response);
+                // if (window.ReactNativeWebView) {
+                //     window.ReactNativeWebView.postMessage(response);
+                // }
                 // if (typeof Captcha !== "undefined") {
                 //     Captcha.postMessage(response);
                 // }
