@@ -38,11 +38,12 @@
             /* Define a altura do reCAPTCHA */
         }
     </style>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?hl=pt-BR" async defer></script>
+
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="captcha-container">
         <form action="?" method="POST">
             <div class="g-recaptcha" data-sitekey="6LdY8CAqAAAAAFw7JZSoMCA_wtZEa3kD50e2GXRC"
                 data-callback="captchaCallback"></div>
@@ -52,6 +53,16 @@
             function captchaCallback(response) {
                 console.log(response);
             }
+        </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const captchaContainer = document.querySelector('#captcha-container');
+
+                captchaContainer.addEventListener('click', function () {
+                    console.log('onClickCallBack')
+                })
+            })
         </script>
     </div>
 </body>
