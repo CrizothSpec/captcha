@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 200;
+            margin-top: 30px;
+            padding: 0;
+            overflow: hidden;
+            /* Remove barras de rolagem */
+        }
+
+        .container {
+            width: 100%;
+            /* Ajusta a largura do contêiner para preencher o espaço disponível */
+            height: 100%;
+            /* Ajusta a altura do contêiner para preencher o espaço disponível */
+            display: flex;
+            align-items: center;
+            /* Centraliza o conteúdo verticalmente */
+            justify-content: left;
+            /* Centraliza o conteúdo horizontalmente */
+        }
+
+        .g-recaptcha {
+            transform: scale(1);
+            /* Ajusta a escala do reCAPTCHA */
+            transform-origin: 0 0;
+            /* Define o ponto de origem da transformação */
+            width: 120px;
+            /* Define a largura do reCAPTCHA */
+            height: 60px;
+            /* Define a altura do reCAPTCHA */
+        }
+    </style>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <form action="?" method="POST">
+            <div class="g-recaptcha" data-sitekey="6LdY8CAqAAAAAFw7JZSoMCA_wtZEa3kD50e2GXRC"
+                data-callback="captchaCallback"></div>
+            <br />
+            <input type="submit" value="Submit">
+        </form>
+        <script>
+            function captchaCallback(response) {
+                //console.log(response);
+                alert(response);
+                if (typeof Captcha !== "undefined") {
+                    Captcha.postMessage(response);
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>
