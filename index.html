@@ -3,36 +3,61 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
+        html,
         body {
             margin: 0;
             padding: 0;
             overflow: hidden;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            height: auto;
+
+            /* Remove barras de rolagem */
         }
+
+        .container {
+            width: 100dvw;
+            /* Ajusta a largura do contêiner para preencher o espaço disponível */
+            max-width: 100dvw;
+            height: auto;
+            /* Ajusta a altura do contêiner para preencher o espaço disponível */
+            display: flex;
+            align-items: center;
+            /* Centraliza o conteúdo verticalmente */
+            justify-content: left;
+        }
+
 
         .g-recaptcha {
             transform: scale(1);
+            /* Ajusta a escala do reCAPTCHA */
             transform-origin: 0 0;
+            /* Define o ponto de origem da transformação */
             width: 120px;
+            /* Define a largura do reCAPTCHA */
             height: 60px;
+            /* Define a altura do reCAPTCHA */
         }
     </style>
     <script src="https://www.google.com/recaptcha/api.js?hl=pt-BR" async defer></script>
+
 </head>
 
 <body>
-    <div class="g-recaptcha" data-sitekey="6LdY8CAqAAAAAFw7JZSoMCA_wtZEa3kD50e2GXRC" data-callback="captchaCallback">
+    <div class="container" id="captcha-container">
+        <form action="?" method="POST">
+            <div class="g-recaptcha" data-sitekey="6LdY8CAqAAAAAFw7JZSoMCA_wtZEa3kD50e2GXRC"
+                data-callback="captchaCallback"></div>
+            <br />
+
+        </form>
+        <script>
+            function captchaCallback(response) {
+                console.log(response);
+            }
+
+        </script>
     </div>
-    <script>
-        function captchaCallback(response) {
-            // Optional: Handle the response from reCAPTCHA here
-            console.log(response);
-        }
-    </script>
 </body>
 
 </html>
