@@ -49,6 +49,7 @@
         <script>
             function captchaCallback(response) {
                 //console.log(response);
+                return response;
                 alert(response);
                 if (typeof Captcha !== "undefined") {
                     Captcha.postMessage(response);
