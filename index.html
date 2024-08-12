@@ -10,33 +10,29 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            height: auto;
-
-            /* Remove barras de rolagem */
+            height: 80vh;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            direction: column;
+            justify-content: center;
         }
 
         .container {
-            width: 100dvw;
-            /* Ajusta a largura do contêiner para preencher o espaço disponível */
-            max-width: 100dvw;
+            width: 100vw;
+            max-width: 100vw;
             height: auto;
-            /* Ajusta a altura do contêiner para preencher o espaço disponível */
             display: flex;
             align-items: center;
-            /* Centraliza o conteúdo verticalmente */
             justify-content: left;
         }
 
 
         .g-recaptcha {
             transform: scale(1);
-            /* Ajusta a escala do reCAPTCHA */
             transform-origin: 0 0;
-            /* Define o ponto de origem da transformação */
             width: 120px;
-            /* Define a largura do reCAPTCHA */
             height: 60px;
-            /* Define a altura do reCAPTCHA */
         }
     </style>
     <script src="https://www.google.com/recaptcha/api.js?hl=pt-BR" async defer></script>
@@ -55,6 +51,7 @@
             function captchaCallback(response) {
                 console.log(response);
             }
+
 
         </script>
     </div>
