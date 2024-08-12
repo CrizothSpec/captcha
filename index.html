@@ -35,7 +35,7 @@
             height: 60px;
         }
     </style>
-    <script src="https://www.google.com/recaptcha/api.js?hl=pt-BR" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&hl=pt-BR" async defer></script>
 
 </head>
 
@@ -51,8 +51,11 @@
             function captchaCallback(response) {
                 console.log(response);
             }
-
-
+        </script>
+        <script type="text/javascript">
+            var onloadCallback = function () {
+                alert("loaded");
+            };
         </script>
     </div>
 </body>
